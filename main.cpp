@@ -50,7 +50,8 @@ int main() {
         }
         //population.pop_back(); How do we pop targeted element?
         Organism* child = CurrentMax->reproduce(random);
-        population[0] = child;
+        int overwrite = random.GetUInt(0,100);
+        population[overwrite] = child;
 
         if (TotalMax->GetBehavior() < child->GetBehavior()){
             TotalMax = child;
